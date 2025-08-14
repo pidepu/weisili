@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="卫斯理女子大学：赋能女性的百年精神灯塔，展示杰出杰出校友风采">
+    <meta name="keywords" content="卫斯理女子大学,女性教育,杰出校友,女子学院">
+    <meta name="author" content="卫斯理女子大学教育展示">
+    <title>卫斯理女子大学 - 赋能女性的百年学府</title>
+    <!-- 引入Tailwind CSS核心样式 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wellesley: {
+                            blue: '#003366',    // 卫斯理蓝（主色）
+                            lightBlue: '#E6F0FF',// 浅蓝（辅助色）
+                            yellow: '#FFD700'    // 金色（强调色）
+                        }
+                    },
+                    utilities: {
+                        'content-auto': {
+                            contentVisibility: 'auto'
+                        },
+                        'highlight': {
+                            backgroundColor: '#FFF3CD',
+                            fontWeight: '600',
+                            padding: '0.25rem 0.5rem',
+                            borderRadius: '0.25rem'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- 自定义工具类注入 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .timeline-item-hover {
+                @apply shadow-lg transform transition-all duration-300 scale-[1.01];
+            }
+            .nav-scrolled {
+                @apply shadow-md;
+            }
+            .hero-image-container {
+                @apply relative w-full overflow-hidden;
+                height: 60vh;
+                min-height: 300px;
+                max-height: 600px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <!-- 导航栏 -->
+    <nav id="main-nav" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300" aria-label="主导航">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-bold uppercase tracking-wider text-wellesley-blue">
+                WELLESLEY COLLEGE
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button id="mobile-menu-btn" class="md:hidden text-wellesley-blue p-2 rounded hover:bg-wellesley-lightBlue transition-colors" aria-label="打开菜单" aria-expanded="false">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 头部区域（优化图片显示） -->
+    <header class="relative w-full">
+        <!-- 图片容器优化：使用固定比例并确保图片居中 -->
+        <div class="hero-image-container">
+            <img 
+                src="https://q9.itc.cn/q_70/images03/20240730/de4011255fbb4287928b47c4d47297e5.png" 
+                alt="卫斯理女子大学校园风光" 
+                class="absolute inset-0 w-full h-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+                sizes="100vw"
+                srcset="https://q9.itc.cn/q_70/images03/20240730/de4011255fbb4287928b47c4d47297e5.png?w=600 600w, 
+                        https://q9.itc.cn/q_70/images03/20240730/de4011255fbb4287928b47c4d47297e5.png?w=1200 1200w,
+                        https://q9.itc.cn/q_70/images03/20240730/de4011255fbb4287928b47c4d47297e5.png?w=1800 1800w"
+            >
+        </div>
+        <!-- 遮罩层：增强对比度+文字可读性 -->
+        <div class="absolute inset-0 bg-wellesley-blue/50 flex items-center justify-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center px-4 leading-tight">
+                卫斯理女子大学：<br class="md:hidden">赋能女性的百年精神灯塔
+            </h1>
+        </div>
+    </header>
+
+    <!-- 正文区域 -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-12 content-auto">
+            <p class="mb-6 text-lg leading-relaxed">
+                当 <span class="highlight">"赋能女性"</span> 成为一所大学的灵魂，它便成了改写历史的火种 ——1870 年诞生于美国马萨诸塞州的卫斯理女子大学，自始至终以 <span class="highlight">"打破性别桎梏"</span> 为使命，用超过 150 年的坚守，重新定义女性教育的重量。它从不以 <span class="highlight">"女子学院"</span> 设限梦想，反而用行动宣告：女性的舞台，与天空同高。
+            </p>
+            
+            <p class="mb-6 text-lg leading-relaxed">
+                这所学校的历史，是部突破 <span class="highlight">"不可能"</span> 的史诗。建校之初，主流社会仍质疑女性接受高等教育的必要性，卫斯理却率先开设物理、天文等 <span class="highlight">"男性专属"</span> 学科，建起全美最早的女子实验室，摒弃 <span class="highlight">"女性只学家政艺术"</span> 的偏见，以 <span class="highlight">"培养改变世界的领导者"</span> 为核心，让女孩们凭知识获得与世界平等对话的底气。从推动 19 世纪末女性投票权，到支持 20 世纪女性职场突围，再到如今倡导性别平等，它始终站在全球女性运动前沿。
+            </p>
+            
+            <p class="mb-6 text-lg leading-relaxed">
+                作为全球女子高等教育的标杆，证明女子学院是培养顶尖人才的沃土，推动多国建立重视女性潜能的教育体系。学术上，它文理实力稳居世界前列，物理、政治等专业催生大批女性先驱；思想上，它是性别平等理念的发源地，毕业生将平等思想带向全球；育人上，它不批量生产精英，而是挖掘每个女性的独特潜能，鼓励她们挑战男性主导领域，让 <span class="highlight">"不被定义、敢于开创"</span> 的精神，催生出各领域的女性开拓者。
+            </p>
+            
+            <p class="text-lg leading-relaxed">
+                百年光阴里，卫斯理从未刻意追求名气，却因无数女性的绽放成为传奇。它的了不起，不在于培养了多少名人，而在于始终相信 <span class="highlight">"每个女孩都能改变世界"</span>—— 在这里，<span class="highlight">"女性"</span> 是力量的代名词，<span class="highlight">"梦想"</span> 是用知识、勇气浇筑的现实。如今回望，这所校园承载的不只是建筑，更是一代代女性冲破束缚的背影；它像永不熄灭的灯，照亮女性前行之路，也让世界铭记：当女性拥有平等教育机会，她们能创造的价值，足以撼动时代、改变未来。
+            </p>
+        </section>
+    </main>
+
+    <!-- 校友展示区 -->
+    <section class="container mx-auto px-4 py-12 bg-wellesley-lightBlue">
+        <h2 class="text-3xl font-bold text-center mb-12 text-wellesley-blue">杰出校友</h2>
+        
+        <div class="relative max-w-4xl mx-auto">
+            <!-- 时间轴中线 -->
+            <div class="absolute left-1/2 w-1 bg-blue-200 h-full -translate-x-1/2 hidden md:block z-0"></div>
+            
+            <!-- 校友列表容器 -->
+            <ul id="alumni-list" class="space-y-12 content-auto" aria-label="杰出校友列表">
+                <!-- 校友数据将通过JavaScript动态生成 -->
+            </ul>
+        </div>
+        
+        <!-- 新增“了解更多”按钮 -->
+        <div class="text-center mt-12">
+            <a 
+                href="https://www.wellesley.edu/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-8 py-3 bg-wellesley-blue text-white font-semibold rounded-lg shadow-md hover:bg-wellesley-blue/90 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-wellesley-yellow focus:ring-offset-2"
+                aria-label="前往卫斯理女子大学官网了解更多（新窗口打开）"
+            >
+                <i class="fa-solid fa-arrow-right"></i>
+                了解更多
+            </a>
+        </div>
+        
+        <!-- 版权信息 -->
+        <footer class="text-center mt-8 text-gray-600 text-sm">
+            © 卫斯理女子大学 | 页面内容仅供教育展示使用
+        </footer>
+    </section>
+
+    <script>
+        // 1. 导航栏滚动效果
+        const nav = document.getElementById('main-nav');
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+            }, 50);
+        });
+
+        // 2. 移动端菜单按钮状态切换
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        mobileMenuBtn?.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            // 菜单展开/收起逻辑可在此处扩展
+        });
+
+        // 3. 校友数据
+        const alumniData = [
+            {
+                name: "胡彬夏",
+                graduationYear: "1907",
+                title: "中国女权先锋",
+                imageUrl: "https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/2f3b09cb2b80499ea045969dfc230944~tplv-xv4ileqgde-image.image",
+                description: "1907年毕业于卫斯理女子大学，是中国第一批公派留美女留学生之一。她创办《女子世界》杂志，积极投身女权运动与教育事业，曾任国立女子师范大学副校长，为近代中国女性解放事业注入蓬勃活力。"
+            },
+            {
+                name: "王季茞",
+                graduationYear: "1910",
+                title: "中国第一位女化学博士",
+                imageUrl: "https://q9.itc.cn/q_70/images03/20240610/19cba17b85434d55b92264f14931fa76.jpeg",
+                description: "中国第一位女化学博士，清末民初时期毕业于卫斯理女子大学。博士论文让全世界认识了中国燕麦的营养价值。归国后，她深耕民国女性教育领域，致力于女子教育事业，推动更多女性走出家庭、接受正规教育，是近代中国女子教育的重要推动者。"
+            },
+            {
+                name: "宋美龄",
+                graduationYear: "1917",
+                title: "第一位在美国国会演讲的中国人",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/a89c5942bfedde2c7e4c574056517970",
+                description: "1917年从卫斯理女子大学毕业，获\"杜兰学者\"荣誉。毕业归国后，她在近代中国政治舞台上扮演重要角色，曾执掌航空委员会。1943年，她成为第一位在美国国会演讲的中国人，其演说影响深远。"
+            },
+            {
+                name: "冰心（谢婉莹）",
+                graduationYear: "1926",
+                title: "《寄小读者》温暖几代中国童心",
+                imageUrl: "https://q4.itc.cn/q_70/images01/20250228/d585ce41b4f9454896f0e7cc1bc0641a.jpeg",
+                description: "1923年从燕京大学毕业后前往卫斯理女子大学攻读英国文学，1926年获文学硕士学位。她在求学期间创作的《寄小读者》，以细腻笔触温暖了几代中国童心，成为中国儿童文学的经典之作。"
+            },
+            {
+                name: "严幼韵",
+                graduationYear: "1929",
+                title: "112岁的杰出女外交官，上海滩著名的\"84号小姐\"",
+                imageUrl: "https://q5.itc.cn/q_70/images01/20250514/46a85ab71b80468cb36b7f5668e21fee.jpeg",
+                description: "20世纪20年代末毕业于卫斯理女子大学，出身上海富商家庭，是上海滩著名的\"84号小姐\"。她人生经历极具传奇色彩，后期到联合国出任联合国礼宾官，并与著名外交家顾维钧相识。1959年9月3日，严幼韵与顾维钧在墨西哥城中国大使馆举行婚礼。活至112岁，见证了近代中国乃至世界的诸多历史变迁。"
+            },
+            {
+                name: "施蕴珍（施美美）",
+                graduationYear: "1931",
+                title: "翻译《芥子园画传》成为世界认知中国绘画的钥匙",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/de3e321d26ddd0eccf967055f70ad499",
+                description: "1927-1931年就读于卫斯理女子大学，学习人文学科。毕业后，她成为知名作家、画家、翻译家，其翻译的《芥子园画传》成为世界认知中国绘画的钥匙，让西方得以深入了解中国绘画，她的画作在国际上亦有展出。"
+            },
+            {
+                name: "谢文秋",
+                graduationYear: "1930s",
+                title: "让全世界认识中国美食的第一人",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/77711c899458781af2d67fc887a19e5b",
+                description: "20世纪30年代毕业于卫斯理女子大学，是著名的美食作家、烹饪教育家，被誉为\"将中国菜推向西方的先驱\"。其著作《中国菜烹饪大全》在西方广受欢迎，对传播中国饮食文化意义重大，将木须肉英文写入牛津词典是让全世界认识中国美食的第一人。"
+            },
+            {
+                name: "Marion Osher Sandler",
+                graduationYear: "1952",
+                title: "美国女性CEO先驱",
+                imageUrl: "https://fortune.com/img-assets/wp-content/uploads/2025/06/GettyImages-837669088.jpg?w=1440&q=90",
+                description: "1952届校友，1958年获纽约大学工商管理硕士学位。后进入华尔街，成为多米尼克公司首位非文员女性员工，担任证券分析师。1963年，她与丈夫赫伯特共同创立控股公司高盛西部金融公司，并收购加州的高盛西部储蓄贷款协会，后更名为世界储蓄银行。夫妇俩长期担任联席首席执行官达43年，是美国最早、任期最久的女性首席执行官之一。"
+            },
+            {
+                name: "Madeleine Albright",
+                graduationYear: "1959",
+                title: "从捷克斯洛伐克少女到美国首位女国务卿",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/4b84d68b9c2e235129f957ff4c9e09f9",
+                description: "1959年毕业于卫斯理女子大学，获政治学学士学位，1976年获哥伦比亚大学公共法律与政府博士学位。1993年被比尔·克林顿总统任命为美国驻联合国大使，1997年出任美国国务卿，任内倡导北约东扩、防止核武器扩散，对美国外交影响深远。"
+            },
+            {
+                name: "Nora Ephron",
+                graduationYear: "1962",
+                title: "三获奥斯卡提名的浪漫喜剧大师",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/cfe7b869152cfb7f4822d05b03f0c0bb",
+                description: "1962年毕业于卫斯理女子大学，获政治学学位。她以编剧和导演浪漫喜剧电影闻名，曾获英国电影学院奖，以及三项奥斯卡金像奖提名、一项金球奖提名、一项托尼奖提名和三项美国编剧工会奖。"
+            },
+            {
+                name: "Lulu Chow Wang",
+                graduationYear: "1966",
+                title: "山茱萸资本创始人，母校情怀践行者",
+                imageUrl: "https://ww2.kqed.org/about/wp-content/uploads/sites/19/2019/02/Makers-Business.jpg",
+                description: "卫斯理女子大学1966届华裔校友，1997年与丈夫共同创立山茱萸资本管理公司，名称源自母校慰冰湖的山茱萸地。2000年曾向母校捐款2500万美元建立以自己名字命名的学生中心，是当时母校收到的最大单笔捐款。"
+            },
+            {
+                name: "Diane Sawyer",
+                graduationYear: "1967",
+                title: "横扫新闻界顶级奖项的《60分钟》首位女主播",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/32c101c1cf30afc170a0cc1075ada3e3",
+                description: "1967年毕业于卫斯理女子大学，获学士学位。她是哥伦比亚广播公司（CBS）新闻节目《60分钟》首位女主播，还曾担任美国广播公司（ABC）《早安美国》联合主持人及《ABC世界新闻》主播，斩获罗伯特·F·肯尼迪新闻奖特等奖、多项艾美奖。"
+            },
+            {
+                name: "Hillary Rodham Clinton",
+                graduationYear: "1969",
+                title: "横跨白宫与参议院的政坛女性领导者",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/da97487c04921d0e66b65c0e8ec4f363",
+                description: "1969年毕业于卫斯理女子大学，后进入耶鲁大学法学院深造。曾任美国第一夫人、纽约州美国参议员及奥巴马政府国务卿，是唯一在总统高级幕僚西翼设办公室的美国第一夫人，2000年成为首位当选美国参议员的第一夫人。"
+            },
+            {
+                name: "Liz Peek",
+                graduationYear: "1975",
+                title: "华尔街最早的女性合伙人先驱",
+                imageUrl: "https://cdn.thefiscaltimes.com/sites/default/assets/styles/bio_full/public/Liz_Peek_large.jpg?itok=6rXiC587",
+                description: "以杜兰学者荣誉毕业于卫斯理女子大学，主修商业与管理经济学，1975年加入沃特海姆公司担任能源行业研究分析师，1983年成功晋升为合伙人，成为华尔街首批女性合伙人之一，打破当时男性主导的投行合伙人圈层。"
+            },
+            {
+                name: "Amelia Chilcott Fawcett",
+                graduationYear: "1978",
+                title: "摩根斯坦利欧洲业务核心管理者",
+                imageUrl: null,
+                description: "卫斯理女子大学1978届历史专业校友，曾长期任职于摩根斯坦利国际公司，2002年升任欧洲业务副董事长兼首席运营官，还曾担任英国财政部非执行董事，2010年因对金融行业的重大贡献获封女爵士。"
+            },
+            {
+                name: "Rini Mariani Soemarno",
+                graduationYear: "1981",
+                title: "两度入阁的印尼经济\"铁娘子\"",
+                imageUrl: null,
+                description: "1981年毕业于卫斯理女子大学，获经济学学士学位。曾在佐科·维多多总统的工作内阁中担任国有企业部长，2001年至2004年期间，还在梅加瓦蒂·苏加诺普特里的互助内阁中出任工业和贸易部长，在印尼经济领域发挥重要作用。"
+            },
+            {
+                name: "Susan Wagner",
+                graduationYear: "1982",
+                title: "全球最大资产管理公司贝莱德联合创始人",
+                imageUrl: null,
+                description: "卫斯理女子大学1982届英文专业校友，作为全球最大资产管理集团贝莱德的创始人之一，1988年与七位合伙人共同创立该公司。她为女性专业人士提供关键建议：设定更高期望、突破传统领导力刻板印象、以多元文化视角适配全球业务。"
+            },
+            {
+                name: "Pamela Melroy",
+                graduationYear: "1983",
+                title: "卫斯理物理系毕业的NASA航天英雄",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/464e426b0235102f34c2d2a9b5fc3983",
+                description: "1983年毕业于卫斯理女子大学，获物理学与天文学学士学位，1984年获麻省理工学院地球与行星科学硕士学位。1994年被美国宇航局选为宇航员候选人，曾指挥STS-120任务，拥有200多个战斗及战斗支援小时。"
+            },
+            {
+                name: "包德明",
+                graduationYear: "不详",
+                title: "推动台湾职业教育发展的教育家",
+                imageUrl: "https://bkimg.cdn.bcebos.com/pic/d31b0ef41bd5ad6eddc4220dcb9e2edbb6fd53669685",
+                description: "早年毕业于南京金陵女子大学，后获卫斯理女子大学硕士学位。20世纪中期起，担任台湾铭传女子商业专科学校校长，创办铭传学院，推动台湾地区职业教育从0发展到亚洲顶尖水平，成就显著。"
+            },
+            {
+                name: "杨雪兰",
+                graduationYear: "1955",
+                title: "首位全球汽车业巨头华人女高管",
+                imageUrl: "https://p3-search.byteimg.com/obj/labis/a713d2c35b16e323a5240b2fd05f419c",
+                description: "1935年出生，10岁移居美国，1955年毕业于卫斯理女子大学。20世纪后期，成为美国通用汽车公司副总裁，是首位在全球汽车业巨头担任高管的华人女性，积极推动通用汽车与上海的合资项目，为中美汽车产业合作搭建桥梁。"
+            },
+            {
+                name: "Robin Chase",
+                graduationYear: "1980",
+                title: "改变全球出行的\"共享汽车之母\"",
+                imageUrl: "https://p3-search.byteimg.com/obj/mosaic-legacy/21330001da30b483634a",
+                description: "共享汽车品牌Zipcar的联合创始人兼前首席执行官，也是点对点汽车共享服务公司Buzzcar（后被Drivy收购）的创始人兼前首席执行官。此外，她曾担任世界资源研究所董事会成员，2014年起至今担任纳斯达克上市公司Tucows Inc.的董事会主席。"
+            },
+            {
+                name: "Ida Liu",
+                graduationYear: "1998",
+                title: "花旗私人银行全球掌舵者",
+                imageUrl: "https://pics7.baidu.com/feed/4bed2e738bd4b31c478b574f8ca976709f2ff81a.jpeg@f_auto?token=63438223ff08187228d0254ecd6c67d4",
+                description: "卫斯理女子大学1998届校友，主修心理学和中国研究、辅修经济学，2007年加入花旗私人银行后，先后创建并领导时尚、零售与娱乐客户部，2021年晋升为全球主管，领导全球50个办公室，管理超5000亿美元客户业务，连续多年入选《巴伦周刊》\"美国金融界最具影响力的100位女性\"。"
+            },
+            {
+                name: "Vivian Kao",
+                graduationYear: "2004",
+                title: "执掌投资公司的卫斯理校董",
+                imageUrl: "https://pics5.baidu.com/feed/8b13632762d0f703acaefc5dcd9f9e322797c58c.jpeg@f_auto?token=4b5722a8f0f4efba080579bfb2ac4c65",
+                description: "2004年从卫斯理女子大学拿下经济学与中文研究学士学位，2010年获哈佛商学院MBA。职业生涯先任职高盛，后任餐厅预订平台Chope运营主管，2013年成亚洲金融科技公司WeLab首席增长官；目前是Tamarind Global CEO，2022年起任卫斯理学院董事会成员。"
+            },
+            {
+                name: "蒋丽苑",
+                graduationYear: "不详",
+                title: "掌舵千亿集团的\"深圳巾帼功勋\"",
+                imageUrl: "https://p3-search.byteimg.com/obj/tos-cn-i-qvj2lq49k0/49e7e61f174f4e139352c269f8eede23",
+                description: "毕业于美国卫斯理女子大学，作为震雄集团董事局主席兼总裁，在商界崭露头角。2025年，她获评\"深圳巾帼建功功勋女企业家\"，是执掌千亿集团的\"深圳巾帼功勋\"，也是当代商界女性的杰出代表。"
+            }
+        ];
+
+        // 4. 生成校友列表
+        const alumniList = document.getElementById('alumni-list');
+        const defaultAvatar = 'https://via.placeholder.com/128?text=No+Image'; // 统一默认头像地址
+
+        // 批量生成DOM
+        const fragment = document.createDocumentFragment();
+        
+        alumniData.forEach((alumni, index) => {
+            // 校友列表项
+            const listItem = document.createElement('li');
+            listItem.className = `timeline-item flex flex-col md:flex-row items-center md:items-start relative z-10 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`;
+            listItem.setAttribute('aria-label', `校友：${alumni.name}，毕业于${alumni.graduationYear}年`);
+            
+            // 时间节点
+            const yearNode = document.createElement('div');
+            yearNode.className = 'flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-wellesley-blue text-white font-bold z-10 shadow-md mb-4 md:mb-0';
+            yearNode.textContent = alumni.graduationYear;
+            
+            // 校友内容容器
+            const content = document.createElement('div');
+            content.className = `timeline-content bg-white rounded-lg shadow-md p-6 flex-grow w-full md:w-auto ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`;
+            
+            // 校友图片
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-full overflow-hidden border-4 border-wellesley-lightBlue shadow-md mr-4 mb-4 md:mb-0';
+            
+            const image = document.createElement('img');
+            image.alt = `${alumni.name}照片`;
+            image.className = 'w-full h-full object-cover';
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            image.src = alumni.imageUrl || defaultAvatar;
+            image.onerror = () => {
+                image.src = defaultAvatar;
+                image.onerror = null;
+            };
+            
+            imageContainer.appendChild(image);
+            
+            // 校友信息容器
+            const infoContainer = document.createElement('div');
+            infoContainer.className = 'w-full';
+            
+            const nameHeading = document.createElement('h3');
+            nameHeading.className = 'text-xl font-bold text-wellesley-blue mb-1';
+            nameHeading.textContent = alumni.name;
+            
+            const titlePara = document.createElement('p');
+            titlePara.className = 'text-wellesley-blue font-semibold mb-2';
+            titlePara.textContent = alumni.title;
+            
+            const descPara = document.createElement('p');
+            descPara.className = 'text-gray-700 leading-relaxed';
+            descPara.textContent = alumni.description;
+            
+            infoContainer.append(nameHeading, titlePara, descPara);
+            
+            // 组装内容区域
+            const contentInner = document.createElement('div');
+            contentInner.className = 'flex flex-col md:flex-row items-center md:items-start';
+            contentInner.append(imageContainer, infoContainer);
+            content.appendChild(contentInner);
+            
+            // 组装列表项
+            listItem.append(yearNode, content);
+            fragment.appendChild(listItem);
+            
+            // 添加hover效果
+            listItem.addEventListener('mouseenter', () => {
+                content.classList.add('timeline-item-hover');
+            });
+            listItem.addEventListener('mouseleave', () => {
+                content.classList.remove('timeline-item-hover');
+            });
+        });
+        
+        alumniList.appendChild(fragment);
+    </script>
+</body>
+</html>
